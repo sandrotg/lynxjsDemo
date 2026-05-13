@@ -181,3 +181,59 @@
     font-weight: 600;
     font-size: 13px;
 }
+
+.event-name {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px 0;
+}
+
+.logo {
+  width: 40px;
+  aspect-ratio: 1;
+}
+
+.icon-big{
+  width: 30px;
+  aspect-ratio: 1;
+}
+
+.input-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 5px 5px 5px 15px; 
+  border: 1px solid #000;
+  border-radius: 50px;
+}
+
+.input {
+  height: 100%;
+  color: #000;
+  flex: 1;
+}
+
+.button{
+  padding: 15px;
+  border-radius: 100%;
+  background-color: var(--acent-color);
+}
+
+.search-icon {
+  width: 15px;
+  aspect-ratio: 1;
+}
+
+.search-list {
+    flex: 1;
+    list-main-axis-gap: 15px;
+    margin-top: 20px;
+    padding-left: 10px;
+}

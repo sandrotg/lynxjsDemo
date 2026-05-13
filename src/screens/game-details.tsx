@@ -6,6 +6,7 @@ import ratingIcon from "../assets/rating.png";
 import DateItem from '../components/DateItem';
 import { useState } from "@lynx-js/react";
 import Loader from '../components/Loader';
+import GameList from '../components/GameList';
 
 const GameDetailsScreen = () => {
 
@@ -69,43 +70,48 @@ const GameDetailsScreen = () => {
                         </text>
                     ))}
                 </view>
-            </view>
 
-            <text className="heading">Screenshots</text>
 
-            <list
-                scroll-orientation="horizontal"
-                list-type="single"
-                span-count={1}
-                className="horizontal-list"
-            >
-                {screenshots?.map((screenshot) => {
-                    return (
-                        <list-item
-                            item-key={`list-item-${screenshot.id}`}
-                            key={`list-item-${screenshot.id}`}
-                        >
-                            <image
-                                src={getImageUrl(screenshot?.image_id)}
-                                className="image"
-                                style={{
-                                    width: "230px",
-                                    aspectRatio: 16 / 9,
-                                }}
-                            />
-                        </list-item>
-                    );
-                })}
-            </list>
+                <text className="heading">Screenshots</text>
 
-            <text className="heading">You can play on</text>
+                <list
+                    scroll-orientation="horizontal"
+                    list-type="single"
+                    span-count={1}
+                    className="horizontal-list"
+                >
+                    {screenshots?.map((screenshot) => {
+                        return (
+                            <list-item
+                                item-key={`list-item-${screenshot.id}`}
+                                key={`list-item-${screenshot.id}`}
+                            >
+                                <image
+                                    src={getImageUrl(screenshot?.image_id)}
+                                    className="image"
+                                    style={{
+                                        width: "230px",
+                                        aspectRatio: 16 / 9,
+                                    }}
+                                />
+                            </list-item>
+                        );
+                    })}
+                </list>
 
-            <view className="tag-container">
-                {platforms?.map((platform) => (
-                    <text key={platform.id} className="tag">
-                        {platform.name}
-                    </text>
-                ))}
+                <text className="heading">You can play on</text>
+
+                <view className="tag-container">
+                    {platforms?.map((platform) => (
+                        <text key={platform.id} className="tag">
+                            {platform.name}
+                        </text>
+                    ))}
+                </view>
+
+                <text className="heading">You may also like</text>
+
+                <GameList games={similar_games} />
             </view>
         </scroll-view>
     )
