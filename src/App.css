@@ -1,0 +1,123 @@
+:root{
+   --background-color: #fbf8ef;
+   --acent-color: #16c47f;
+}
+
+.scroll-container {
+  height: 100%;
+  background-color: var(--background-color);
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.scroll-content {
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 10px;
+  gap: 10px;
+}
+
+.image {
+  width: 100%;
+  aspect-ratio: 3/4;
+  border-radius: 10px;
+  border: 1px solid #000;
+}
+
+.card-title {
+  font-weight: 600;
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-left: 20px;
+}
+
+.heading {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.horizontal-list {
+  list-main-axis-gap: 15px;
+  padding-right: 15px;
+}
+
+.back-button {
+    padding: 10px;
+    border: 1px solid #000;
+    align-self: flex-start;
+    border-radius: 100%;
+}
+
+.back-button-icon {
+    width: 20px;
+    aspect-ratio: 1;
+}
+
+.game-info{
+  display: flex;
+  align-items: center;
+}
+
+.game-name{
+  font-size: 25px;
+  font-weight: 600;
+  flex: 1;
+}
+
+.rating-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.rating-icon {
+    width: 25px;
+    aspect-ratio: 1;
+}
+
+.rating {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.developer {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.date-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #000;
+    align-self: flex-start;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: var(--accent-color);   
+}
+
+.date-icon {
+    width: 20px;
+    aspect-ratio: 1;
+}
+.date {
+  font-size: 13px;
+}
+
+.summary {
+  font-size: 16px;
+}
+
