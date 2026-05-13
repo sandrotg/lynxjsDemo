@@ -1,5 +1,7 @@
 import useGameQuery from "../hooks/useGameQuery";
 import GameCard from "./GameCard";
+import GameList from "./GameList";
+import Loader from "./Loader";
 
 interface IGameCategory {
     id: string;
@@ -13,7 +15,7 @@ const GameCategory = (props: IGameCategory) => {
 
     const { data: games, isPending, error } = useGameQuery(query);
 
-    if (isPending) return <text>Loading...</text>;
+    if (isPending) return <Loader />;
 
     if (error) return <text>Error: {error.message}</text>;
 
@@ -23,23 +25,7 @@ const GameCategory = (props: IGameCategory) => {
         <view className="category">
             <text className="heading">{title}</text>
             {/* render games */}
-            <list
-                scroll-orientation="horizontal"
-                list-type="single"
-                span-count={1}
-                className="horizontal-list"
-            >
-                {games?.map((game) => {
-                    return (
-                        <list-item
-                            item-key={`list-item-${game.id}`}
-                            key={`list-item-${game.id}`}
-                        >
-                            <GameCard {...game}/>
-                        </list-item>
-                    );
-                })}
-            </list>
+            <GameList games={games} />
         </view>
     )
 }
